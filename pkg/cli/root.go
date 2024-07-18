@@ -8,12 +8,14 @@ import (
 )
 
 var rootCmd = &cobra.Command {
-	Use: "Hugo",
-	Short: "Hugo is a very fast static site generator",
-	Long: `A Fast and Flexible Static Site Generator built with
-                love by spf13 and friends in Go.
-                Complete documentation is available at http://hugo.spf13.com`,
-	Run: func(cmd *cobra.Command, args []string) {},
+	Use: "go-shit",
+	Short: "go-shit makes your code ugly",
+	Long: `go-shit is a tool that "uglifies" your code by removing formatting, adding unnecessary spaces/characters, etc.`,
+	Run: func(cmd *cobra.Command, args []string) {
+		if len(args) == 0 {
+			cmd.Help()
+		}
+	},
 }
 
 func Execute() {
