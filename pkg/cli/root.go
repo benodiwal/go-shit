@@ -7,6 +7,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func init() {
+	rootCmd.AddCommand(versionCmd)
+	rootCmd.AddCommand(uglifyCmd)
+	
+	uglifyCmd.PersistentFlags().StringVarP(&inputFile, "input", "i", "", "Input file to uglify")
+	uglifyCmd.MarkFlagRequired("input")
+
+	rootCmd.CompletionOptions.DisableDefaultCmd = true
+}
+
 var rootCmd = &cobra.Command {
 	Use: "go-shit",
 	Short: "go-shit makes your code ugly",
