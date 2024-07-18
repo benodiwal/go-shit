@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"benodiwal/github.com/go-shit/pkg/uglify"
 	"benodiwal/github.com/go-shit/pkg/utils"
 
 	"github.com/spf13/cobra"
@@ -20,7 +21,8 @@ var uglifyCmd = &cobra.Command{
 			fmt.Println("Input File is required")
 			os.Exit(1)
 		} else {
-			fmt.Println(string(utils.ReadFile(inputFile)))
+			content := string(utils.ReadFile(inputFile))
+			utils.WriteFile(inputFile, uglify.RandomIndentation(content))
 		}
 	},
 }

@@ -12,3 +12,10 @@ func ReadFile(filename string) (content []byte) {
 	}
 	return content
 }
+
+func WriteFile(filename string, content string) {
+	err := os.WriteFile(filename, []byte(content), 0644)
+	if err != nil {
+		log.Fatalf("failed to write file: %s", err)
+	}
+}
