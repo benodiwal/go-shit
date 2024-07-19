@@ -11,7 +11,6 @@ import (
 func AddRandomWhiteSpace(code string) string {
 	var modifiedSrc strings.Builder
 	rand.Seed(time.Now().UnixNano())
-
 	var s scanner.Scanner
 	fset := token.NewFileSet()
 	file := fset.AddFile("", fset.Base(), len(code))
@@ -31,7 +30,7 @@ func AddRandomWhiteSpace(code string) string {
 		if lit != "" {
 			modifiedSrc.WriteString(lit)
 		} else {
-			modifiedSrc.WriteString(tok.String())
+			modifiedSrc.WriteString(" ")
 		}
 
 		if isPunctuator(tok) {
