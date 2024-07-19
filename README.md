@@ -4,5 +4,13 @@ A CLI tool to make your code looks ugly. This is the exact opposite of code pret
 
 ## Installation  
 ```bash
+git clone git@github.com:benodiwal/go-shit.git
+```
+
+```bash
+cd go-shit
+```
+
+```bash
 
 ```
