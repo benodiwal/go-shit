@@ -22,7 +22,6 @@ func RandomizeCase(code string) (string, error) {
 
 	rand.Seed(time.Now().UnixNano())
 
-	// First pass: collect local identifiers
 	ast.Inspect(file, func(n ast.Node) bool {
 		switch x := n.(type) {
 		case *ast.FuncDecl:
@@ -45,7 +44,6 @@ func RandomizeCase(code string) (string, error) {
 		return true
 	})
 
-	// Second pass: apply changes consistently
 	ast.Inspect(file, func(n ast.Node) bool {
 		if ident, ok := n.(*ast.Ident); ok && !ident.IsExported() {
 			if newName, exists := identifierMap[ident.Name]; exists {
