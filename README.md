@@ -2,6 +2,8 @@
 
 A CLI tool to make your code looks ugly. This is the exact opposite of code prettifiers like Prettier, aiming to make your code look as unorganized and chaotic as possible.
 
+![Demo GIF](demo/demo.gif)
+
 ## Installation
 
 1. Clone the repo:
@@ -41,3 +43,6 @@ where [options]:
 ```bash
 go-shit uglify -i <FILE_PATH>
 ```
+
+## LICENSE
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
