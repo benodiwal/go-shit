@@ -22,7 +22,9 @@ var uglifyCmd = &cobra.Command{
 			os.Exit(1)
 		} else {
 			content := string(utils.ReadFile(inputFile))
-			utils.WriteFile(inputFile, uglify.RandomIndentation(content))
+			content = uglify.AddRandomWhiteSpace(content)
+			// utils.WriteFile(inputFile, uglify.RandomIndentation(content))
+			utils.WriteFile(inputFile, content)
 		}
 	},
 }
